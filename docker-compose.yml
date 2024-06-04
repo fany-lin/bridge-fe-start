@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  bridge-fe:
+    container_name: bridge-fe
+    build:
+      context: ./
+      dockerfile: docker/Dockerfile
+    ports:
+      - '8000:8000'
+    networks:
+      - vm
+
+networks:
+  vm:
+    driver: bridge
